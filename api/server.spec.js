@@ -38,3 +38,19 @@ describe("auth-router.js", () => {
         })
     })
 })
+
+describe("jokes-router.js", () => {
+    describe("GET /", () => {
+        it("should return list of dad jokes", async () => {
+            const get = await supertest(server)
+            .get("/api/jokes")
+            expect(get.status).toBe(401)
+        })
+        // it.skip("should return the registered new user", async () => {
+        //     const samwise = await supertest(server)
+        //     .post("/api/auth/register")
+        //     .send({username: "Samwise", password: "Gamgee"})
+        //     expect(samwise.body.users.username).toBe("Samwise")
+        // })
+    })
+})
